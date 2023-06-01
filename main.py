@@ -12,7 +12,10 @@ def main():
     args = parser.parse_args()
     img_path = args.img_path
 
-    res = skew_correction_passport(img_path)
+    gray, image_rlsa_horizontal_inv, res = skew_correction_passport(img_path)
+    cv2.imwrite('data/processed/processed.jpg', gray)
+    cv2.imwrite('data/processed/rlsa_horizontal.jpg', image_rlsa_horizontal_inv)
+    cv2.imwrite('results/result.jpg', res)
     imShow(res)
 
 if __name__ == "__main__":

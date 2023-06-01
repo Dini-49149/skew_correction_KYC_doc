@@ -87,11 +87,11 @@ def skew_correction_passport(img):
         # rotate our image by 45 degrees around the center of the image
         M = cv2.getRotationMatrix2D((cX, cY), rotation_angle, 1.0)
         rotated = cv2.warpAffine(image, M, (w, h))
-        cv2.imwrite('../../results/result.jpg', rotated)
-        return rotated
+        
+        return gray, image_rlsa_horizontal_inv, rotated
     else:
-        cv2.imwrite('../../results/result.jpg', image)
-        return image
+        
+        return gray, image_rlsa_horizontal_inv, rotated
 
 
 

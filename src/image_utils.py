@@ -26,5 +26,4 @@ def image_processing_passport_front(img):
     norm_img = cv2.normalize(thr_img, thr_img, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_8UC1)
     adjusted = adjust_gamma(norm_img, gamma=0.5)
     gray=cv2.cvtColor(adjusted, cv2.COLOR_BGR2GRAY)
-    cv2.imwrite('../../data/processed/processed.jpg', gray)
     return gray
