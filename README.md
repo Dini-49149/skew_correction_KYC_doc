@@ -1,5 +1,5 @@
 # skew-correction-KYC-Documents
-## Go through the skew correction for passport ipython notebook file and other two are similar to it.
+
 At present, our world is progressing rapidly towards process automation with the help of AI technologies, one of which is used to automate ID card information extraction. In this process, documents are being digitalized and information is extracted and stored from a text extracted using Optical Character Recognition, cutting edge technology for text extraction. The text extraction accuracy is observed to be higher in zero skewed images with text in black and white background, consequently, we need to eliminate the skewness in the document uploaded.
  
 There are different skew correction methods available for text images having black text over the white background as shown in fig1. These methods sometimes do not work for KYC Documents like voter, passport, Driving licence etc, because they contain other information such as pictures, signature, QR codes, watermarks etc. So, In this post, we will discuss my approach of solving the skew correction by taking the passport sample as shown in fig2.
@@ -9,11 +9,7 @@ There are different skew correction methods available for text images having bla
 <p align="center"> <img src="https://user-images.githubusercontent.com/71541898/133245481-2c94f835-d512-485f-b5d6-ad63756ea97a.jpg" width="450" height="350"/> </p>
 <p align="center">fig 2: Passport sample for skew correction</p>
 
-## Dependencies
-
-Python3, matplotlib, numpy, opencv 3.
-
-### Getting started
+### code walkthrough
 
 Steps to skew correction are as follows.
 
@@ -85,7 +81,78 @@ Steps to skew correction are as follows.
         M = cv2.getRotationMatrix2D((cX, cY), rotation_angle, 1.0)
         rotated = cv2.warpAffine(image, M, (w, h))
     ```
+Sure, here's a simple example of a README file for your project:
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+The project requires Python 3.6+ and the following packages:
+
+- opencv-python
+- numpy
+- matplotlib
+- pythonRLSA
+- argparse
+
+You can install these packages using pip:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Project Structure
+
+The project has the following structure:
+
+```
+- data
+    - processed
+- notebooks
+- results
+- src
+    - image_utils.py
+    - skew_correction.py
+- .gitignore
+- LICENSE
+- README.md
+- main.py
+- requirements.txt
+```
+
+### Usage
+
+You can use the main.py file to correct the skew in passport images. 
+
+```
+python main.py --img_path PATH_TO_YOUR_IMAGE
+```
+
+Replace `PATH_TO_YOUR_IMAGE` with the path to the image you want to process.
+
+## Modules
+
+The project consists of the following modules:
+
+- **image_utils.py**: This module contains utility functions for image processing, such as adjusting gamma, showing images, and processing passport images.
+
+- **skew_correction.py**: This module provides the `skew_correction_passport` function which corrects the skew in passport images. 
+
+## Output
+
+The processed image is saved in the `data/processed/` directory, the rlsa horizontal processed image is saved in `data/processed/rlsa_horizontal.jpg`, and the final result image is saved in the `results/result.jpg` directory.
 
 ##### Note :
-##### 1. Go throught the connectComponentWithStat method parameters and look at the pythonRLSA library. Try with your own KYC Documents, required different image preprocessing for each may be, need to do parameter tuning wherever required (RLSA, in filtering the best connected componets that resembles the shape of rectangle )
-##### 2. You can also calculate the average skew angle for all the connected components and see if it works for your KYC document.
+1. Go throught the connectComponentWithStat method parameters and look at the pythonRLSA library. Try with your own KYC Documents, may require different image preprocessing for different KYC document, need to do parameter tuning wherever required (RLSA, in filtering the best connected componets that resembles the shape of rectangle )
+2. You can also calculate the average skew angle for all the connected components and see if it works for your KYC document.
+
+## Contact
+For any queries or further discussions, feel free to reach out to me at dinesh.vennapoosa@gmail.com
+
+## License
+
+This project is licensed under the terms of the MIT license.
+
+
