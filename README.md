@@ -148,11 +148,13 @@ The processed image is saved in the `data/processed/` directory, the rlsa horizo
 1. Go throught the connectComponentWithStat method parameters and look at the pythonRLSA library. Try with your own KYC Documents, may require different image preprocessing for different KYC document, need to do parameter tuning wherever required (RLSA, in filtering the best connected componets that resembles the shape of rectangle )
 2. You can also calculate the average skew angle for all the connected components and see if it works for your KYC document.
 
-## Contact
-For any queries or further discussions, feel free to reach out to me at dinesh.vennapoosa@gmail.com
-
 ## License
 
 This project is licensed under the terms of the MIT license.
+
+## Contact
+For any queries or further discussions, feel free to reach out to me at dinesh.vennapoosa@gmail.com
+
+
 
 
