@@ -154,7 +154,7 @@ The processed image is saved in the `data/processed/` directory, the rlsa horizo
 This project is licensed under the terms of the MIT license.
 
 ## Contact
-For any queries or further discussions, feel free to reach out to me at dinesh.vennapoosa@gmail.com
+For any queries or further discussions, feel free to reach out
 
 
 
